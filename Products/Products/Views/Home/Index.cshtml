@@ -1,0 +1,59 @@
+﻿@model List<Products.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" style="text-align:center">
+        <p style="font-size:300%; font-weight:bold">Progress Task</p>
+    </div>
+    <div class="container" style="text-align:center">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">In Stock</th>
+                    <th scope="col">Delivery Date</th>
+                </tr>
+            </thead>
+            @foreach (var row in Model)
+            {
+            <tbody>
+                @if (row.UnitsInStock == 0)
+                {
+                    <tr style="background-color: lightcoral">
+                        <td scope="row">@row.ProductId</td>
+                        <td style="text-decoration:line-through">@row.ProductName</td>
+                        <td>@row.UnitPrice</td>
+                        <td>@row.UnitsInStock</td>
+                        <td style="text-decoration:line-through">@row.DeliveryOn</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td scope="row">@row.ProductId</td>
+                        <td>@row.ProductName</td>
+                        <td>@row.UnitPrice</td>
+                        <td>@row.UnitsInStock</td>
+                        <td>@row.DeliveryOn</td>
+                    </tr>
+                }
+            </tbody>
+            }
+        </table>
+    </div>
+</body>
+</html>

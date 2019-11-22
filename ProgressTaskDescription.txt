@@ -1,0 +1,6 @@
+The technology i decided to use in this project is called Blazor. Blazor simply allow us to build an interactive UIs using C# instead of JavaScript.
+It also allow us to write not only client but also and server side code. The general purpose of this project is to display information about products
+in online shop. The products which are been displayed, we are getting from a separate JSON file. The main componets of this project are the Controllers
+folder, Models folder, Resources folder and Views folder. In the Controllers folder we have our HomeControler.cs wich acts like a middleman between the 
+Model and the View. In the MOdels folder we have our Product.cs file which we are using to get our products from the JSON file located in the Resources
+folder. And last in the Views folder there is the Home subfolder with the Index.cshtml. Here present the result to the user.
